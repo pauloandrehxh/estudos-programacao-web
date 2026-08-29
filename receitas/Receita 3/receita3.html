@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita 3 - Javascript</title>
+
+    <style>
+        #area-info {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+
+            margin-top: 20px;
+            color: blue;
+        }
+
+        .visivel {
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="area-botao">
+        <button id="botaoCarregar">Carregar / Apagar Cerveja</button>
+    </div>
+
+    <div id="area-info"></div>
+
+    <script>
+        let botao = document.getElementById("botaoCarregar");
+        let area = document.getElementById("area-info");
+
+        function alternarCerveja() {
+            if (area.innerHTML === "") {
+                area.innerHTML = "<h1>Guiness</h1>";
+
+                area.classList.add("visivel")
+            } else {
+                area.classList.remove("visivel");
+
+                setTimeout(function () {
+                    area.innerHTML = "";
+                }, 500)
+            }
+        }
+
+        botao.addEventListener("click", alternarCerveja);
+
+    </script>
+</body>
+
+</html>

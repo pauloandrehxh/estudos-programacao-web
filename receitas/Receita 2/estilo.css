@@ -1,0 +1,28 @@
+p.verso {
+    color: blue;
+}
+
+p.mote {
+    color: red;
+}
+
+a {
+    color: mediumturquoise;
+    text-decoration: none;
+}
+
+a:hover {
+    color: green;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
+}
+
+.poeta img {
+    border-radius: 50%;
+    object-fit: cover;
+    /* Mantém a proporção da imagem sem distorcer */
+    border: 2px solid black;
+}
