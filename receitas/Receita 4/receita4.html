@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita 4 - Array JS</title>
+
+    <style>
+        .tabela-cervejas {
+            border-collapse: collapse;
+            width: 300px;
+            margin-top: 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        .tabela-cervejas th,
+        .tabela-cervejas td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .tabela-cervejas th {
+            background-color: #f39c12;
+            color: white;
+        }
+
+        .botoes {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="area">
+        <p>Aguardando ação...</p>
+    </div>
+
+    <div class="botoes">
+        <button id="botaoCarregar">Carregar Tabela</button>
+        <button id="botaoOrdenar">Ordenar (A-Z)</button>
+        <button id="botaoEmbaralhar">Embaralhar</button>
+    </div>
+
+    <script>
+        let cervejas = ["Guinness", "Desperados", "Becks", "Heineken", "Corona"];
+
+        // Callback function que o map() vai usar para transformar cada nome em uma linha de tabela
+        function transformarEmLinha(item) {
+            return `<tr><td>${item}</td></tr>`;
+        }
+
+        function renderizarCervejas() {
+            let div = document.getElementById("area");
+
+            // O map() gera um array de <tr>...</tr>
+            let linhasHtml = cervejas.map(transformarEmLinha);
+
+            div.innerHTML = `
+                <table class="tabela-cervejas">
+                    <tr><th>Cervejas Disponíveis</th></tr>
+                    ${linhasHtml.join("\n")}
+                </table>
+            `;
+        }
+
+        function ordenarCervejas() {
+            cervejas.sort();
+            renderizarCervejas();
+        }
+
+        function embaralharCervejas() {
+            // O método .sort() aceita uma função de comparação.
+            // Passando Math.random() - 0.5, geramos valores positivos e negativos aleatórios,
+            // o que engana o sort() e faz ele embaralhar os itens.
+            cervejas.sort(function () {
+                return Math.random() - 0.5;
+            });
+            renderizarCervejas();
+        }
+
+        document.getElementById("botaoCarregar").addEventListener("click", renderizarCervejas);
+        document.getElementById("botaoOrdenar").addEventListener("click", ordenarCervejas);
+        document.getElementById("botaoEmbaralhar").addEventListener("click", embaralharCervejas);
+
+    </script>
+</body>
+
+</html>
