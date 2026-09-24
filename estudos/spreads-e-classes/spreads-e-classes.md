@@ -37,8 +37,6 @@ Enquanto o Spread "espalha", o Rest "agrupa". Ele é usado nos parâmetros de um
 **Exemplo:**
 
 ```Javascript
-
-
     // O ...numeros empacota todos os argumentos passados
     const calcularSoma = (...numeros) => {
         // Usamos o método reduce para somar todos os itens do array

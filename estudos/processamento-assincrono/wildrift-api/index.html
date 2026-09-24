@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wild Rift API</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            margin-top: 20px;
+            font-family: Arial;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        /* Estilizando os links para ficarem parecidos com botões ou textos clicáveis */
+        .meus-links {
+            display: inline-block;
+            margin-right: 15px;
+            color: blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="meus-links" id="linkCarregar">Carregar Campeões</a>
+
+    <div id="area-tabela"></div>
+
+    <script src="api.js"></script>
+
+    <!-- <script>
+        const carregarDiv = (lista) => {
+            const div = document.getElementById("area-tabela");
+
+            const linhasHtml = lista.map(item => `<tr><td>${item}</td></tr>`);
+
+            div.innerHTML = `<table><tr><th>Champions</th></tr>${linhasHtml.join("\n")}</table>`;
+        };
+
+        document.getElementById("linkCarregar").addEventListener("click", carregarDiv);
+    </script> -->
+</body>
+
+</html>
